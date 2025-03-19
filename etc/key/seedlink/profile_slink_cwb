@@ -1,0 +1,12 @@
+# Activated plugins for category sources
+sources = CWB:chain
+
+# Hostname or IP of the Seedlink server.
+sources.CWB.address = 130.118.86.156
+
+# Port of the Seedlink server
+sources.CWB.port = 18000
+
+# List of stream selectors. If left empty all available streams will be
+# requested. See slinktool manpage for more information.
+sources.CWB.selectors = ""

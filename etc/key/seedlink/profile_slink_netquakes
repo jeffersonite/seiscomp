@@ -6,7 +6,7 @@ backfill_buffer = 86400
 sources = NQ:chain
 
 # Hostname or IP of the Seedlink server.
-sources.NQ.address = 137.227.233.34
+sources.NQ.address = 137.227.232.158
 
 # Port of the Seedlink server
 sources.NQ.port = 18010
