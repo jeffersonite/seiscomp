@@ -1,0 +1,45 @@
+# Activated plugins for category sources
+sources = reftek
+
+# Hostname or IP of the RTPD server.
+sources.reftek.address = 127.0.0.1
+
+# Port of the RTPD server.
+sources.reftek.port = 2543
+
+# Defines an alternative unit mapping file. The default file is in
+# $INSTALLDIR/var/lib/seedlink/reftek2sl.map. If this path is not an absolute
+# path it will treated as relative path to $INSTALLDIR/var/lib/seedlink. The
+# map file is used if the unit is not explictly given in the binding. Each line
+# in the file is one mapping from a unit to a station name. The first column is
+# the unit id e.g. 91F3 and the second column the Seedlink station name e.g.
+# ABCD.
+sources.reftek.map = reftek2sl.map
+
+# The unit id.
+sources.reftek.unit = AD43
+
+# Name of the proc object uniquely defined in a template file of the reftek
+# plugin e.g.
+# $SEISCOMP_ROOT/share/templates/seedlink/reftek/streams_{name}.tpl. proc is
+# used for processing, e.g. renaming or resampling of raw streams (streams
+# submitted by a plugin as raw samples). The template file is used to generate
+# $SEISCOMP_ROOT/var/lib/seedlink/streams.xml .
+# Example template:
+# $SEISCOMP_ROOT/share/templates/seedlink/reftek/streams_reftek.tpl
+sources.reftek.proc = local_reftek
+
+# Timeout length in seconds. If no data is received from a Reftek unit during
+# this period, the plugin assumes that the unit is disconnected.
+sources.reftek.timeout = 60
+
+# Default timing quality in percents. This value will be used when no timing
+# quality information is available. Can be -1 to omit the blockette 1001
+# altogether.
+sources.reftek.default_tq = 40
+
+# Timing quality to use when GPS is out of lock.
+sources.reftek.unlock_tq = 10
+
+# Send Reftek state-of-health data as Mini-SEED LOG stream.
+sources.reftek.log_soh = true
